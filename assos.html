@@ -31,174 +31,270 @@
         a:hover {
             text-decoration: underline;
         }
+        .language-selector {
+            margin-bottom: 20px;
+        }
+        .language-selector label {
+            font-weight: bold;
+        }
+        .language-content {
+            display: none;
+        }
+        .language-content.active {
+            display: block;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
-    <h1>Politique de Confidentialité pour Stocky pêche</h1>
-    <p><strong>Dernière mise à jour : 22 janvier 2025</strong></p>
+    <!-- Sélecteur de langue -->
+    <div class="language-selector">
+        <label for="language">Choisir la langue :</label>
+        <select id="language" onchange="changeLanguage()">
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+        </select>
+    </div>
 
-    <p>
-        Cette Politique de Confidentialité décrit mes politiques et procédures concernant la collecte, l'utilisation et la divulgation de vos informations lorsque vous utilisez mon Service. Elle vous informe également sur vos droits en matière de confidentialité et sur la manière dont la loi vous protège.
-    </p>
+    <!-- Contenu dynamique -->
+    <div id="content">
+        <h1 id="title"></h1>
+        <p><strong id="lastUpdated"></strong></p>
+        <p id="intro"></p>
 
-    <h2>Interprétation et Définitions</h2>
-    <h3>Interprétation</h3>
-    <p>
-        Les mots dont la première lettre est en majuscule ont des significations définies dans les conditions suivantes. Les définitions suivantes ont la même signification, qu'elles apparaissent au singulier ou au pluriel.
-    </p>
+        <h2 id="interpretation"></h2>
+        <p id="interpretationText"></p>
 
-    <h3>Définitions</h3>
-    <p>
-        Aux fins de cette Politique de Confidentialité :
-    </p>
-    <ul>
-        <li><strong>Compte</strong> désigne un compte unique créé pour vous permettre d'accéder à mon Service ou à certaines parties de mon Service.</li>
-        <li><strong>Application</strong> désigne Stocky pêche, le programme logiciel que j'ai développé.</li>
-        <li><strong>Développeur</strong> (désigné soit par "Moi", "Je" ou "Mon" dans cet Accord) désigne Maaye Bouha, le développeur responsable de la création et de la maintenance de l'Application.</li>
-        <li><strong>Pays</strong> désigne : Mauritanie.</li>
-        <li><strong>Appareil</strong> désigne tout appareil pouvant accéder au Service, tel qu'un ordinateur, un téléphone portable ou une tablette numérique.</li>
-        <li><strong>Données Personnelles</strong> désigne toute information se rapportant à une personne identifiée ou identifiable.</li>
-        <li><strong>Service</strong> désigne l'Application.</li>
-        <li><strong>Fournisseur de Services</strong> désigne toute personne physique ou morale qui traite les données pour mon compte. Il désigne des tiers ou des individus employés pour faciliter le Service, fournir le Service en mon nom, exécuter des services liés au Service ou m'aider à analyser la manière dont le Service est utilisé.</li>
-        <li><strong>Données d'Utilisation</strong> désigne les données collectées automatiquement, générées par l'utilisation du Service ou par l'infrastructure du Service elle-même (par exemple, la durée de visite d'une page).</li>
-        <li><strong>Vous</strong> désigne la personne accédant ou utilisant le Service, ou la société, ou toute autre entité juridique au nom de laquelle cette personne accède ou utilise le Service, selon le cas.</li>
-    </ul>
+        <h2 id="definitions"></h2>
+        <p id="definitionsText"></p>
 
-    <h2>Collecte et Utilisation de Vos Données Personnelles</h2>
-    <h3>Types de Données Collectées</h3>
-    <h4>Données Personnelles</h4>
-    <p>
-        Lorsque vous utilisez mon Service, je peux vous demander de me fournir certaines informations personnelles identifiables qui peuvent être utilisées pour vous contacter ou vous identifier. Les informations personnelles identifiables peuvent inclure, mais sans s'y limiter :
-    </p>
-    <ul>
-        <li>Prénom et nom</li>
-        <li>Numéro de téléphone</li>
-        <li>Adresse, État, Province, Code postal, Ville</li>
-        <li>Données d'Utilisation</li>
-    </ul>
+        <h3 id="account"></h3>
+        <p id="accountDefinition"></p>
 
-    <h4>Données d'Utilisation</h4>
-    <p>
-        Les Données d'Utilisation sont collectées automatiquement lors de l'utilisation du Service.
-    </p>
-    <p>
-        Les Données d'Utilisation peuvent inclure des informations telles que l'adresse IP de votre appareil, le type de navigateur, la version du navigateur, les pages de mon Service que vous visitez, l'heure et la date de votre visite, le temps passé sur ces pages, des identifiants uniques d'appareil et d'autres données de diagnostic.
-    </p>
-    <p>
-        Lorsque vous accédez au Service par ou via un appareil mobile, je peux collecter certaines informations automatiquement, y compris, mais sans s'y limiter, le type d'appareil mobile que vous utilisez, l'identifiant unique de votre appareil mobile, l'adresse IP de votre appareil mobile, votre système d'exploitation mobile, le type de navigateur Internet mobile que vous utilisez, des identifiants uniques d'appareil et d'autres données de diagnostic.
-    </p>
-    <p>
-        Je peux également collecter des informations que votre navigateur envoie chaque fois que vous visitez mon Service ou lorsque vous accédez au Service par ou via un appareil mobile.
-    </p>
+        <h3 id="application"></h3>
+        <p id="applicationDefinition"></p>
 
-    <h3>Utilisation de Vos Données Personnelles</h3>
-    <p>
-        Je peux utiliser les Données Personnelles aux fins suivantes :
-    </p>
-    <ul>
-        <li>Pour fournir et maintenir mon Service, y compris pour surveiller l'utilisation de mon Service.</li>
-        <li>Pour gérer votre Compte : pour gérer votre inscription en tant qu'utilisateur du Service. Les Données Personnelles que vous fournissez peuvent vous donner accès à différentes fonctionnalités du Service qui sont disponibles pour vous en tant qu'utilisateur enregistré.</li>
-        <li>Pour vous contacter : Pour vous contacter par e-mail, appels téléphoniques, SMS ou autres formes équivalentes de communication électronique, telles que les notifications push d'une application mobile concernant des mises à jour ou des communications informatives liées aux fonctionnalités, produits ou services sous contrat, y compris les mises à jour de sécurité, lorsque cela est nécessaire ou raisonnable pour leur mise en œuvre.</li>
-        <li>Pour vous fournir des nouvelles, des offres spéciales et des informations générales sur d'autres biens, services et événements que je propose et qui sont similaires à ceux que vous avez déjà achetés ou sur lesquels vous vous êtes renseigné, sauf si vous avez choisi de ne pas recevoir de telles informations.</li>
-        <li>Pour gérer vos demandes : Pour répondre et gérer vos demandes auprès de moi.</li>
-        <li>Pour d'autres finalités : Je peux utiliser vos informations à d'autres fins, telles que l'analyse de données, l'identification des tendances d'utilisation, la détermination de l'efficacité de mes campagnes promotionnelles et pour évaluer et améliorer mon Service, mes produits, mes services, mon marketing et votre expérience.</li>
-    </ul>
+        <h3 id="developer"></h3>
+        <p id="developerDefinition"></p>
 
-    <h3>Partage de Vos Données Personnelles</h3>
-    <p>
-        Je peux partager vos informations personnelles dans les situations suivantes :
-    </p>
-    <ul>
-        <li><strong>Avec des Fournisseurs de Services</strong> : Je peux partager vos informations personnelles avec des Fournisseurs de Services pour surveiller et analyser l'utilisation de mon Service, pour vous contacter.</li>
-        <li><strong>Avec votre consentement</strong> : Je peux divulguer vos informations personnelles à toute autre fin avec votre consentement.</li>
-    </ul>
+        <h3 id="country"></h3>
+        <p id="countryDefinition"></p>
 
-    <h2>Conservation de Vos Données Personnelles</h2>
-    <p>
-        Je conserverai vos Données Personnelles uniquement aussi longtemps que nécessaire pour les finalités décrites dans cette Politique de Confidentialité. Je conserverai et utiliserai vos Données Personnelles dans la mesure nécessaire pour respecter mes obligations légales (par exemple, si je suis tenu de conserver vos données pour respecter les lois applicables), résoudre les litiges et faire respecter mes accords et politiques juridiques.
-    </p>
-    <p>
-        Je conserverai également les Données d'Utilisation à des fins d'analyse interne. Les Données d'Utilisation sont généralement conservées pour une période plus courte, sauf lorsque ces données sont utilisées pour renforcer la sécurité ou améliorer la fonctionnalité de mon Service, ou lorsque je suis légalement obligé de conserver ces données pour des périodes plus longues.
-    </p>
+        <h3 id="device"></h3>
+        <p id="deviceDefinition"></p>
 
-    <h2>Transfert de Vos Données Personnelles</h2>
-    <p>
-        Vos informations, y compris les Données Personnelles, sont traitées à mon bureau et dans tout autre lieu où les parties impliquées dans le traitement sont situées. Cela signifie que ces informations peuvent être transférées vers — et conservées sur — des ordinateurs situés en dehors de votre état, province, pays ou autre juridiction gouvernementale où les lois sur la protection des données peuvent différer de celles de votre juridiction.
-    </p>
-    <p>
-        Votre consentement à cette Politique de Confidentialité suivi de votre soumission de ces informations représente votre accord à ce transfert.
-    </p>
-    <p>
-        Je prendrai toutes les mesures raisonnablement nécessaires pour m'assurer que vos données sont traitées de manière sécurisée et conformément à cette Politique de Confidentialité, et aucun transfert de vos Données Personnelles n'aura lieu vers une organisation ou un pays à moins qu'il n'y ait des contrôles adéquats en place, y compris la sécurité de vos données et autres informations personnelles.
-    </p>
+        <h3 id="personalData"></h3>
+        <p id="personalDataDefinition"></p>
 
-    <h2>Suppression de Vos Données Personnelles</h2>
-    <p>
-        Vous avez le droit de supprimer ou de demander que je vous aide à supprimer les Données Personnelles que j'ai collectées à votre sujet.
-    </p>
-    <p>
-        Mon Service peut vous donner la possibilité de supprimer certaines informations vous concernant à partir du Service.
-    </p>
-    <p>
-        Vous pouvez mettre à jour, modifier ou supprimer vos informations à tout moment en vous connectant à votre Compte, si vous en avez un, et en visitant la section des paramètres du compte qui vous permet de gérer vos informations personnelles. Vous pouvez également me contacter pour demander l'accès, la correction ou la suppression de toute information personnelle que vous m'avez fournie.
-    </p>
-    <p>
-        Veuillez noter, cependant, que je peux être obligé de conserver certaines informations lorsque j'ai une obligation légale ou une base légale pour le faire.
-    </p>
+        <h3 id="service"></h3>
+        <p id="serviceDefinition"></p>
 
-    <h2>Divulgation de Vos Données Personnelles</h2>
-    <h3>Application de la Loi</h3>
-    <p>
-        Dans certaines circonstances, je peux être obligé de divulguer vos Données Personnelles si la loi l'exige ou en réponse à des demandes valides des autorités publiques (par exemple, un tribunal ou une agence gouvernementale).
-    </p>
+        <h3 id="serviceProvider"></h3>
+        <p id="serviceProviderDefinition"></p>
 
-    <h3>Autres Obligations Légales</h3>
-    <p>
-        Je peux divulguer vos Données Personnelles si je crois de bonne foi que cette action est nécessaire pour :
-    </p>
-    <ul>
-        <li>Se conformer à une obligation légale</li>
-        <li>Protéger et défendre mes droits ou mes biens</li>
-        <li>Prévenir ou enquêter sur d'éventuels actes répréhensibles en lien avec le Service</li>
-        <li>Protéger la sécurité personnelle des utilisateurs du Service ou du public</li>
-        <li>Se protéger contre la responsabilité légale</li>
-    </ul>
+        <h3 id="usageData"></h3>
+        <p id="usageDataDefinition"></p>
 
-    <h2>Sécurité de Vos Données Personnelles</h2>
-    <p>
-        La sécurité de vos Données Personnelles est importante pour moi, mais rappelez-vous qu'aucune méthode de transmission sur Internet ou méthode de stockage électronique n'est sûre à 100 %. Bien que je m'efforce d'utiliser des moyens commercialement acceptables pour protéger vos Données Personnelles, je ne peux pas garantir leur sécurité absolue.
-    </p>
+        <h3 id="you"></h3>
+        <p id="youDefinition"></p>
 
-    <h2>Confidentialité des Enfants</h2>
-    <p>
-        Mon Service ne s'adresse à personne de moins de 13 ans. Je ne collecte pas sciemment d'informations personnelles identifiables de quiconque de moins de 13 ans. Si vous êtes un parent ou un tuteur et que vous savez que votre enfant m'a fourni des Données Personnelles, veuillez me contacter. Si j'apprends que j'ai collecté des Données Personnelles de quiconque de moins de 13 ans sans vérification du consentement parental, je prends des mesures pour supprimer ces informations de mes serveurs.
-    </p>
-    <p>
-        Si je dois me appuyer sur le consentement comme base légale pour le traitement de vos informations et que votre pays exige le consentement d'un parent, je peux exiger le consentement de votre parent avant de collecter et d'utiliser ces informations.
-    </p>
+        <h2 id="collectingData"></h2>
+        <h3 id="typesOfData"></h3>
+        <h4 id="personalDataSection"></h4>
+        <p id="personalDataSectionText"></p>
+        <ul id="personalDataList"></ul>
 
-    <h2>Liens vers d'Autres Sites Web</h2>
-    <p>
-        Mon Service peut contenir des liens vers d'autres sites web qui ne sont pas exploités par moi. Si vous cliquez sur un lien tiers, vous serez dirigé vers le site de ce tiers. Je vous conseille vivement de consulter la Politique de Confidentialité de chaque site que vous visitez.
-    </p>
-    <p>
-        Je n'ai aucun contrôle sur et n'assume aucune responsabilité pour le contenu, les politiques de confidentialité ou les pratiques de tout site ou service tiers.
-    </p>
+        <h4 id="usageDataSection"></h4>
+        <p id="usageDataSectionText"></p>
+        <p id="usageDataDetails"></p>
+        <p id="mobileUsage"></p>
+        <p id="browserData"></p>
 
-    <h2>Modifications de cette Politique de Confidentialité</h2>
-    <p>
-        Je peux mettre à jour ma Politique de Confidentialité de temps à autre. Je vous informerai de tout changement en publiant la nouvelle Politique de Confidentialité sur cette page.
-    </p>
-    <p>
-        Je vous conseille de consulter cette Politique de Confidentialité périodiquement pour tout changement. Les modifications à cette Politique de Confidentialité sont effectives lorsqu'elles sont publiées sur cette page.
-    </p>
+        <h2 id="useOfData"></h2>
+        <p id="useOfDataText"></p>
+        <ul id="useOfDataList"></ul>
 
-    <h2>Me Contacter</h2>
-    <p>
-        Si vous avez des questions sur cette Politique de Confidentialité, vous pouvez me contacter :
-    </p>
-    <ul>
-        <li>Par email : <a href="mailto:bougenaay@icloud.com">bougenaay@icloud.com</a></li>
-    </ul>
+        <h2 id="sharingData"></h2>
+        <p id="sharingDataText"></p>
+        <ul id="sharingDataList"></ul>
+
+        <h2 id="retention"></h2>
+        <p id="retentionText"></p>
+        <p id="retentionUsageData"></p>
+
+        <h2 id="transfer"></h2>
+        <p id="transferText"></p>
+        <p id="transferConsent"></p>
+        <p id="transferSecurity"></p>
+
+        <h2 id="deletion"></h2>
+        <p id="deletionText"></p>
+        <p id="deletionService"></p>
+        <p id="deletionAccount"></p>
+        <p id="deletionNote"></p>
+
+        <h2 id="disclosure"></h2>
+        <h3 id="disclosureLaw"></h3>
+        <p id="disclosureLawText"></p>
+
+        <h3 id="disclosureLegal"></h3>
+        <p id="disclosureLegalText"></p>
+        <ul id="disclosureLegalList"></ul>
+
+        <h2 id="security"></h2>
+        <p id="securityText"></p>
+
+        <h2 id="childrenPrivacy"></h2>
+        <p id="childrenPrivacyText"></p>
+        <p id="childrenConsent"></p>
+
+        <h2 id="links"></h2>
+        <p id="linksText"></p>
+        <p id="linksResponsibility"></p>
+
+        <h2 id="changes"></h2>
+        <p id="changesText"></p>
+        <p id="changesAdvice"></p>
+
+        <h2 id="contact"></h2>
+        <p id="contactText"></p>
+        <p id="contactEmail"></p>
+    </div>
+
+    <script>
+        // Charger les traductions depuis le fichier JSON
+        let translations = {};
+
+        async function loadTranslations() {
+            const response = await fetch('translations.json');
+            translations = await response.json();
+            changeLanguage(); // Appliquer la langue par défaut
+        }
+
+        // Fonction pour changer la langue
+        function changeLanguage() {
+            const language = document.getElementById("language").value;
+            const content = document.getElementById("content");
+
+            // Appliquer les traductions
+            document.getElementById("title").textContent = translations[language].title;
+            document.getElementById("lastUpdated").textContent = translations[language].lastUpdated;
+            document.getElementById("intro").textContent = translations[language].intro;
+            document.getElementById("interpretation").textContent = translations[language].interpretation;
+            document.getElementById("interpretationText").textContent = translations[language].interpretationText;
+            document.getElementById("definitions").textContent = translations[language].definitions;
+            document.getElementById("definitionsText").textContent = translations[language].definitionsText;
+
+            document.getElementById("account").textContent = translations[language].account;
+            document.getElementById("accountDefinition").textContent = translations[language].accountDefinition;
+
+            document.getElementById("application").textContent = translations[language].application;
+            document.getElementById("applicationDefinition").textContent = translations[language].applicationDefinition;
+
+            document.getElementById("developer").textContent = translations[language].developer;
+            document.getElementById("developerDefinition").textContent = translations[language].developerDefinition;
+
+            document.getElementById("country").textContent = translations[language].country;
+            document.getElementById("countryDefinition").textContent = translations[language].countryDefinition;
+
+            document.getElementById("device").textContent = translations[language].device;
+            document.getElementById("deviceDefinition").textContent = translations[language].deviceDefinition;
+
+            document.getElementById("personalData").textContent = translations[language].personalData;
+            document.getElementById("personalDataDefinition").textContent = translations[language].personalDataDefinition;
+
+            document.getElementById("service").textContent = translations[language].service;
+            document.getElementById("serviceDefinition").textContent = translations[language].serviceDefinition;
+
+            document.getElementById("serviceProvider").textContent = translations[language].serviceProvider;
+            document.getElementById("serviceProviderDefinition").textContent = translations[language].serviceProviderDefinition;
+
+            document.getElementById("usageData").textContent = translations[language].usageData;
+            document.getElementById("usageDataDefinition").textContent = translations[language].usageDataDefinition;
+
+            document.getElementById("you").textContent = translations[language].you;
+            document.getElementById("youDefinition").textContent = translations[language].youDefinition;
+
+            document.getElementById("collectingData").textContent = translations[language].collectingData;
+            document.getElementById("typesOfData").textContent = translations[language].typesOfData;
+            document.getElementById("personalDataSection").textContent = translations[language].personalDataSection;
+            document.getElementById("personalDataSectionText").textContent = translations[language].personalDataSectionText;
+            document.getElementById("personalDataList").innerHTML = translations[language].personalDataList.map(item => `<li>${item}</li>`).join("");
+
+            document.getElementById("usageDataSection").textContent = translations[language].usageDataSection;
+            document.getElementById("usageDataSectionText").textContent = translations[language].usageDataSectionText;
+            document.getElementById("usageDataDetails").textContent = translations[language].usageDataDetails;
+            document.getElementById("mobileUsage").textContent = translations[language].mobileUsage;
+            document.getElementById("browserData").textContent = translations[language].browserData;
+
+            document.getElementById("useOfData").textContent = translations[language].useOfData;
+            document.getElementById("useOfDataText").textContent = translations[language].useOfDataText;
+            document.getElementById("useOfDataList").innerHTML = translations[language].useOfDataList.map(item => `<li>${item}</li>`).join("");
+
+            document.getElementById("sharingData").textContent = translations[language].sharingData;
+            document.getElementById("sharingDataText").textContent = translations[language].sharingDataText;
+            document.getElementById("sharingDataList").innerHTML = translations[language].sharingDataList.map(item => `<li>${item}</li>`).join("");
+
+            document.getElementById("retention").textContent = translations[language].retention;
+            document.getElementById("retentionText").textContent = translations[language].retentionText;
+            document.getElementById("retentionUsageData").textContent = translations[language].retentionUsageData;
+
+            document.getElementById("transfer").textContent = translations[language].transfer;
+            document.getElementById("transferText").textContent = translations[language].transferText;
+            document.getElementById("transferConsent").textContent = translations[language].transferConsent;
+            document.getElementById("transferSecurity").textContent = translations[language].transferSecurity;
+
+            document.getElementById("deletion").textContent = translations[language].deletion;
+            document.getElementById("deletionText").textContent = translations[language].deletionText;
+            document.getElementById("deletionService").textContent = translations[language].deletionService;
+            document.getElementById("deletionAccount").textContent = translations[language].deletionAccount;
+            document.getElementById("deletionNote").textContent = translations[language].deletionNote;
+
+            document.getElementById("disclosure").textContent = translations[language].disclosure;
+            document.getElementById("disclosureLaw").textContent = translations[language].disclosureLaw;
+            document.getElementById("disclosureLawText").textContent = translations[language].disclosureLawText;
+            document.getElementById("disclosureLegal").textContent = translations[language].disclosureLegal;
+            document.getElementById("disclosureLegalText").textContent = translations[language].disclosureLegalText;
+            document.getElementById("disclosureLegalList").innerHTML = translations[language].disclosureLegalList.map(item => `<li>${item}</li>`).join("");
+
+            document.getElementById("security").textContent = translations[language].security;
+            document.getElementById("securityText").textContent = translations[language].securityText;
+
+            document.getElementById("childrenPrivacy").textContent = translations[language].childrenPrivacy;
+            document.getElementById("childrenPrivacyText").textContent = translations[language].childrenPrivacyText;
+            document.getElementById("childrenConsent").textContent = translations[language].childrenConsent;
+
+            document.getElementById("links").textContent = translations[language].links;
+            document.getElementById("linksText").textContent = translations[language].linksText;
+            document.getElementById("linksResponsibility").textContent = translations[language].linksResponsibility;
+
+            document.getElementById("changes").textContent = translations[language].changes;
+            document.getElementById("changesText").textContent = translations[language].changesText;
+            document.getElementById("changesAdvice").textContent = translations[language].changesAdvice;
+
+            document.getElementById("contact").textContent = translations[language].contact;
+            document.getElementById("contactText").textContent = translations[language].contactText;
+            document.getElementById("contactEmail").innerHTML = translations[language].contactEmail;
+
+            // Appliquer la direction du texte pour l'arabe
+            if (language === "ar") {
+                content.setAttribute("dir", "rtl");
+                content.style.textAlign = "right";
+            } else {
+                content.removeAttribute("dir");
+                content.style.textAlign = "left";
+            }
+        }
+
+        // Charger les traductions au démarrage
+        window.onload = loadTranslations;
+    </script>
 </body>
 </html>
